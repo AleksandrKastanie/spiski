@@ -106,27 +106,28 @@
 #spisok1_.sort(reverse=True)
 #print("по убыванию=>",spisok1_)
 
-                                                                            #5
-spisok1=['крот', 'белка', 'выхухоль']
-spisok2=['a', 'aa', 'aaa', 'aaaa', 'aaaaa']
-spisok3=['qweasdqweas', 'q', 'rteww', 'ewqqqqq']
-spisok1.sort(key=len)
-#print(spisok1)
-spisok2.sort(key=len)
-#print(spisok2)
-#print(spisok3)
-ss=[spisok1,spisok2,spisok3]
-N=0
-while N<len(ss):
-    pikkem=0
-    sN_=[]
-    for s in ss[N]:
-        pikkus=len(s)
-        if pikkus>pikkem: pikkem=pikkus
-    for s in ss[N]:
-        sN_.append(s.ljust(pikkem,"_"))
-    print(sN_)
-    N+=1
+
+                                                                  #5
+#spisok1=['крот', 'белка', 'выхухоль']
+#spisok2=['a', 'aa', 'aaa', 'aaaa', 'aaaaa']
+#spisok3=['qweasdqweas', 'q', 'rteww', 'ewqqqqq']
+#spisok1.sort(key=len)
+##print(spisok1)
+#spisok2.sort(key=len)
+##print(spisok2)
+##print(spisok3)
+#ss=[spisok1,spisok2,spisok3]
+#N=0
+#while N<len(ss):
+#    pikkem=0
+#    sN_=[]
+#    for s in ss[N]:
+#        pikkus=len(s)
+#        if pikkus>pikkem: pikkem=pikkus
+#    for s in ss[N]:
+#        sN_.append(s.ljust(pikkem,"_"))
+#    print(sN_)
+#    N+=1
 
 
 #for s in spisok1:
@@ -147,3 +148,67 @@ while N<len(ss):
 #for s3 in spisok3:
 #    sp3.append(s3.ljust(widt,"_"))
 #print(sp3)
+                                                  # Домашнее задание по видео
+
+honor=["1","2","3","Я улетел","ÖÖ","lilled","Я роняю Zapad,У!","Põhjala","Tinker","DOTA","3","1000-7","Papich","What the dog doing?","3", "Admiral Z"]
+print("РАБота со списками")
+
+while 1:
+    try:
+        vibor=int(input("Будем работать? 1-да; 2-нет; =>"))
+        if  vibor==1 or vibor==2:
+            break
+    except ValueError:
+        print()
+print(honor)
+while 1:
+    print("Используйте 1 из 10 функций для списка, указанные ниже")
+    print("1 - Добавим элемент в конец списка ")
+    print("2 - Расширяет список, добавляя в конец всех, символы введеные пользователем (ввод нного кол-ва символов привидет к добавлению нного кол-ва элементов )")
+    print("3 - Вставляет после 4-го элемента  элемент значение заданный вами")
+    print("4 - Удаляет элемент в списке")
+    print("5 - Удаляет введеный элемент и возвращает его.")
+    print("6 - Сортирует список от наименьшего к большему и затем по алфавиту ")
+    print("7 - Разворачивает список  ")
+    print("8 - Копия списка  ")
+    print("9 - Очищает список")
+    print("10 - Кол-во повтарений 3-го элемента ")
+    nomer=""
+    while nomer!=int and nomer not in [1,2,3,4,5,6,7,8,9,10]:
+        try:
+            nomer=int(input("выберите номер: => "))
+        except ValueError:
+            print()
+    if nomer==1:
+        honor.append(input("Добавьте элемент:  "))
+        print(honor)
+    elif nomer==2:       
+        honor.extend(input("Добавьте значение: "))
+        print(honor)
+    elif nomer==3:       
+        honor.insert(4,input("Добавьте значение: "))
+        print(honor)
+    elif nomer==4:
+        honor.remove(input("Введите значение: "))
+        print(honor)
+    elif nomer==5:
+        honor.pop(int(input("Введите значение: ")))
+        print(honor)
+    elif nomer==6:
+        honor.sort()
+        print(honor)
+    elif nomer==7:
+        honor.reverse()
+        print(honor)
+    elif nomer==8:
+        honor.copy()
+        print(honor)
+        new_honor=honor.copy()
+        print(new_honor)
+    elif nomer==9:
+        honor.clear()
+        print(honor)
+    elif nomer==10:
+        count=honor.count("3")
+        print("Кол-во повторений элемента:", count)
+        print(honor)    
